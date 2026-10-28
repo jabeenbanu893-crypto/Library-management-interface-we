@@ -1,0 +1,29 @@
+let books = [
+    "Python",
+    "Java",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "C Programming",
+    "Computer Networks",
+    "Database Management"
+];
+
+function searchBook() {
+
+    let search = document
+        .getElementById("search")
+        .value.toLowerCase();
+
+    let result = books.filter(book =>
+        book.toLowerCase().includes(search)
+    );
+
+    if (result.length > 0) {
+        document.getElementById("bookList").innerHTML =
+            result.join("<br>");
+    } else {
+        document.getElementById("bookList").innerHTML =
+            "No books found";
+    }
+}
